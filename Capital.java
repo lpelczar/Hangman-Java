@@ -12,6 +12,14 @@ class Capital {
         this.country = country;
     }
 
+    public static Capital getRandomCapital() {
+
+        ArrayList<Capital> capitals = getCapitalsFromFile();
+        Random randomGenerator = new Random();
+        int randomIndex = randomGenerator.nextInt(capitals.size());
+        return capitals.get(randomIndex);
+    }
+
     private static ArrayList<Capital> getCapitalsFromFile() {
 
         String txtFile = "countries_and_capitals.txt";
