@@ -12,6 +12,14 @@ class Capital {
         this.country = country;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public String getCountry() {
+        return this.country;
+    }
+
     public static Capital getRandomCapital() {
 
         ArrayList<Capital> capitals = getCapitalsFromFile();
@@ -35,7 +43,7 @@ class Capital {
 
             while ((line = br.readLine()) != null) {
                 String[] capital = line.split(" | ");
-                capitals.add(new Capital(capital[COUNTRY_COL], capital[CAPITAL_COL]));
+                capitals.add(new Capital(capital[CAPITAL_COL], capital[COUNTRY_COL]));
             }
 
         } catch (FileNotFoundException e) {
