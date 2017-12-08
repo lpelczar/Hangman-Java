@@ -26,6 +26,10 @@ class Capital {
         return this.hiddenWord;
     }
 
+    public String getHiddenWordAsString() {
+        return String.join(" ", this.hiddenWord);
+    }
+
     public static Capital getRandomCapital() {
 
         ArrayList<Capital> capitals = getCapitalsFromFile();

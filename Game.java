@@ -13,6 +13,6 @@ class Game {
 
     public void start() {
         System.out.println(capital.getName());
-        System.out.println(Arrays.toString(capital.getHiddenWord()));
+        System.out.println(capital.getHiddenWordAsString());
     }
 }
