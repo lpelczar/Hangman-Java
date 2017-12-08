@@ -11,7 +11,7 @@ class Capital {
     public Capital(String name, String country) {
         this.name = name;
         this.country = country;
-        this.hiddenWord = name.replaceAll(".", "_").split("");
+        this.hiddenWord = name.replaceAll("[A-Za-z]", "_").split("");
     }
 
     public String getName() {
