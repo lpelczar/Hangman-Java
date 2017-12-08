@@ -44,7 +44,7 @@ class Capital {
         BufferedReader br = null;
         String line = "";
         int COUNTRY_COL = 0;
-        int CAPITAL_COL = 2;
+        int CAPITAL_COL = 1;
         ArrayList<Capital> capitals = new ArrayList<Capital>();
 
         try {
@@ -52,7 +52,7 @@ class Capital {
             br = new BufferedReader(new FileReader(txtFile));
 
             while ((line = br.readLine()) != null) {
-                String[] capital = line.split(" | ");
+                String[] capital = line.split(" \\| ");
                 capitals.add(new Capital(capital[CAPITAL_COL], capital[COUNTRY_COL]));
             }
 
