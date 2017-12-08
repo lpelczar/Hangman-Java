@@ -6,10 +6,12 @@ class Capital {
 
     String name;
     String country;
+    String[] hiddenWord;
 
     public Capital(String name, String country) {
         this.name = name;
         this.country = country;
+        this.hiddenWord = name.replaceAll(".", "_").split("");
     }
 
     public String getName() {
@@ -18,6 +20,10 @@ class Capital {
 
     public String getCountry() {
         return this.country;
+    }
+
+    public String[] getHiddenWord() {
+        return this.hiddenWord;
     }
 
     public static Capital getRandomCapital() {

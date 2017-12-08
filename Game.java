@@ -1,14 +1,18 @@
+import java.util.*;
+
 class Game {
 
-    Capital capital;
-    Player player;
-    LeaderBoard leaderboard;
+    private Capital capital;
+    private Player player;
 
     public Game() {
-        
+
         this.capital = Capital.getRandomCapital();
         this.player = new Player();
-        this.leaderboard = new LeaderBoard();
+    }
 
+    public void start() {
+        System.out.println(capital.getName());
+        System.out.println(Arrays.toString(capital.getHiddenWord()));
     }
 }
