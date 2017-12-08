@@ -14,5 +14,6 @@ class Game {
     public void start() {
         System.out.println(capital.getName());
         System.out.println(capital.getHiddenWordAsString());
+        System.out.println(player.getLifePoints());
     }
 }
