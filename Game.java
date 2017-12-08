@@ -2,9 +2,13 @@ class Game {
 
     Capital capital;
     Player player;
+    LeaderBoard leaderboard;
 
-    public Game(Capital capital, Player player) {
+    public Game() {
+        
         this.capital = Capital.getRandomCapital();
         this.player = new Player();
+        this.leaderboard = new LeaderBoard();
+
     }
 }
