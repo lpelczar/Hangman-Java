@@ -19,11 +19,24 @@ class Game {
         System.out.println(capital.getName());
         System.out.println(capital.getHiddenWordAsString());
         System.out.println(player.getLifePoints());
-        String userOption = GameView.getOption();
+        String userOption = getOption();
 
-        if (userOption == word) {
+        if (userOption.equals(word)) {
             guessWord();
         }
+    }
+
+    public String getOption() {
+
+        String[] correctOptions = {"l", "w"};
+        String userInput = "";
+        boolean userInputInCorrectOptions = false;
+
+        while (!userInputInCorrectOptions) {
+            userInput = GameView.getOptionInput();
+            userInputInCorrectOptions = Arrays.asList(correctOptions).contains(userInput.toLowerCase());
+        }
+        return userInput;
     }
 
     public void guessWord() {
