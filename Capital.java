@@ -30,6 +30,10 @@ class Capital {
         return String.join(" ", this.hiddenWord);
     }
 
+    public boolean isWordEqualCapitalName(String word) {
+        return word == this.name;
+    }
+
     public static Capital getRandomCapital() {
 
         ArrayList<Capital> capitals = getCapitalsFromFile();

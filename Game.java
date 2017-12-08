@@ -15,6 +15,9 @@ class Game {
         System.out.println(capital.getName());
         System.out.println(capital.getHiddenWordAsString());
         System.out.println(player.getLifePoints());
-        GameView.getOption();
+        String userOption = GameView.getOption();
+
     }
+
+
 }
