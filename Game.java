@@ -20,10 +20,14 @@ class Game {
 
         while (!gameIsOver) {
 
-            showInformationToPlay(capital.getName(), capital.getHint(), player.getLifePoints(),
+            showGameHints(capital.getName(), capital.getHint(), player.getLifePoints(),
                                   capital.getNotInWordAsString());
-            String userOption = getOption();
 
+            if (player.getLifePoints() == 1) {
+                GameView.displayCountryName(capital.getCountry());
+            }
+
+            String userOption = getOption();
             if (userOption.toLowerCase().equals(word)) {
                 gameIsOver = checkGuessedWord();
             } else if (userOption.toLowerCase().equals(letter)) {
@@ -31,21 +35,25 @@ class Game {
             }
 
             if (player.getLifePoints() == 0) {
-                GameView.displayLoseMessage();
                 gameIsOver = true;
             }
 
             if (gameIsOver) {
                 estimatedTime = System.nanoTime() - player.getStartTime();
-                showInformationToPlay(capital.getName(), capital.getHint(), player.getLifePoints(),
+                showGameHints(capital.getName(), capital.getHint(), player.getLifePoints(),
                                       capital.getNotInWordAsString());
+                if (player.getLifePoints() == 0) {
+                    GameView.displayLoseMessage();
+                } else {
+                    GameView.displayWinMessage();
+                }
                 GameView.displayGuessingCountAndTime(player.getGuessingCount(), estimatedTime);
                 gameIsOver = askToPlayAgain();
             }
         }
     }
 
-    public void showInformationToPlay(String capitalName, String hint, int lives, String notInWord) {
+    public void showGameHints(String capitalName, String hint, int lives, String notInWord) {
         clearConsole();
         GameView.displayHintAndLives(capitalName, hint, lives);
         if (capital.getNotInWord().size() > 0) {
@@ -79,7 +87,6 @@ class Game {
             capital.unhideLetter(letter);
 
             if (capital.getHiddenWordAsString().equals(capital.getName())) {
-                GameView.displayWinMessage();
                 gameIsOver = true;
             }
         } else {
@@ -116,7 +123,6 @@ class Game {
 
         player.incrementGuessingCount();
         if (capital.isWordEqualCapitalName(word)) {
-            GameView.displayWinMessage();
             capital.makeHiddenWordEqualWord();
             gameIsOver = true;
         } else {

@@ -50,7 +50,7 @@ class GameView {
     }
 
     public static void displayLoseMessage() {
-        System.out.println("You lose!");
+        System.out.print("You lose! ");
     }
 
     public static void displayNotLetterMessage() {
@@ -65,10 +65,14 @@ class GameView {
         System.out.println("Wrong input!");
     }
 
+    public static void displayCountryName(String country) {
+        System.out.println("The capital of: " + country);
+    }
+
     public static void displayGuessingCountAndTime(int count, long time) {
         double seconds = (double)time / 1000000000.0;
         DecimalFormat df = new DecimalFormat("#.##");
-        System.out.println("You guessed after: " + count + " letters. And " + df.format(seconds) + " seconds.");
+        System.out.println("You used: " + count + " letters. And game took you " + df.format(seconds) + " seconds.");
     }
 
 
