@@ -49,27 +49,12 @@ class Game {
         return userInput;
     }
 
-    public boolean checkGuessedWord() {
-
-        boolean gameIsOver = false;
-        String word = GameView.getGuessedWord();
-
-        if (capital.isWordEqualCapitalName(word)) {
-            GameView.displayWinMessage();
-            gameIsOver = true;
-        } else {
-            player.decrementLifePoints();
-            GameView.displayWrongWordMessage();
-        }
-        return gameIsOver;
-    }
-
     public boolean checkGuessedLetter() {
 
         boolean gameIsOver = false;
         char letter = getGuessedLetter();
 
-        System.out.println(letter);
+
 
         return gameIsOver;
     }
@@ -88,9 +73,23 @@ class Game {
             inputIsLetter = true;
             }
         }
-
         char letter = userInput.charAt(0);
         return letter;
+    }
+
+    public boolean checkGuessedWord() {
+
+        boolean gameIsOver = false;
+        String word = GameView.getGuessedWord();
+
+        if (capital.isWordEqualCapitalName(word)) {
+            GameView.displayWinMessage();
+            gameIsOver = true;
+        } else {
+            player.decrementLifePoints();
+            GameView.displayWrongWordMessage();
+        }
+        return gameIsOver;
     }
 
 }
