@@ -13,8 +13,8 @@ class Game {
 
     public void start() {
 
-        String word = "w";
-        String letter = "l";
+        final String WORD = "w";
+        final String LETTER = "l";
         boolean gameIsOver = false;
         long estimatedTime;
 
@@ -28,9 +28,9 @@ class Game {
             }
 
             String userOption = getOption();
-            if (userOption.toLowerCase().equals(word)) {
+            if (userOption.toLowerCase().equals(WORD)) {
                 gameIsOver = checkGuessedWord();
-            } else if (userOption.toLowerCase().equals(letter)) {
+            } else if (userOption.toLowerCase().equals(LETTER)) {
                 gameIsOver = checkGuessedLetter();
             }
 
@@ -63,13 +63,13 @@ class Game {
 
     public String getOption() {
 
-        String[] correctOptions = {"l", "w"};
+        final String[] CORRECT_OPTIONS = {"l", "w"};
         String userInput = "";
         boolean userInputInCorrectOptions = false;
 
         while (!userInputInCorrectOptions) {
             userInput = GameView.getOptionInput();
-            userInputInCorrectOptions = Arrays.asList(correctOptions).contains(userInput.toLowerCase());
+            userInputInCorrectOptions = Arrays.asList(CORRECT_OPTIONS).contains(userInput.toLowerCase());
             if (!userInputInCorrectOptions) {
                 GameView.displayWrongInput();
             }
@@ -140,19 +140,19 @@ class Game {
     public boolean askToPlayAgain() {
 
         boolean gameIsOver;
-        String[] correctOptions = {"y", "n"};
+        String[] CORRECT_OPTIONS = {"y", "n"};
         String userInput = "";
         boolean userInputInCorrectOptions = false;
 
         while (!userInputInCorrectOptions) {
             userInput = GameView.getPlayAgainInput();
-            userInputInCorrectOptions = Arrays.asList(correctOptions).contains(userInput.toLowerCase());
+            userInputInCorrectOptions = Arrays.asList(CORRECT_OPTIONS).contains(userInput.toLowerCase());
             if (!userInputInCorrectOptions) {
                 GameView.displayWrongInput();
             }
         }
 
-        if (userInput.toLowerCase().equals(correctOptions[0])) {
+        if (userInput.toLowerCase().equals(CORRECT_OPTIONS[0])) {
             gameIsOver = false;
             this.capital = Capital.getRandomCapital();
             this.player = new Player();
