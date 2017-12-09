@@ -115,6 +115,7 @@ class Game {
         player.incrementGuessingCount();
         if (capital.isWordEqualCapitalName(word)) {
             GameView.displayWinMessage();
+            capital.makeHiddenWordEqualWord();
             gameIsOver = true;
         } else {
             player.decrementLifePoints();

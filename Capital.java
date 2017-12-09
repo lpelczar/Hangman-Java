@@ -47,6 +47,10 @@ class Capital {
         return word.equalsIgnoreCase(this.name);
     }
 
+    public void makeHiddenWordEqualWord() {
+        this.hiddenWord = this.name.split("");
+    }
+
     public void addLetterToNotInWord(String letter) {
         this.notInWord.add(letter);
     }
