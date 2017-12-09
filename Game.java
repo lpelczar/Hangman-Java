@@ -98,20 +98,24 @@ class Game {
         return gameIsOver;
     }
 
-    public static char getGuessedLetter() {
+    public char getGuessedLetter() {
 
-        boolean inputIsLetter = false;
+        boolean correctInput = false;
         String userInput = "";
 
-        while (!inputIsLetter) {
+        while (!correctInput) {
 
             userInput = GameView.getGuessedLetterInput();
             if (userInput.length() > 1 || !Character.isLetter(userInput.charAt(0))) {
                 GameView.displayNotLetterMessage();
+            } else if (capital.getAlreadyGuessed().contains(userInput.toUpperCase())) {
+                GameView.displayLetterAlreadyGuessed();
             } else {
-            inputIsLetter = true;
+            correctInput = true;
             }
         }
+
+        capital.addLetterToAlreadyGuessed(userInput.toUpperCase());
         char letter = userInput.charAt(0);
         return letter;
     }
@@ -121,7 +125,6 @@ class Game {
         boolean gameIsOver = false;
         String word = GameView.getGuessedWord();
 
-        player.incrementGuessingCount();
         if (capital.isWordEqualCapitalName(word)) {
             capital.makeHiddenWordEqualWord();
             gameIsOver = true;

@@ -8,6 +8,7 @@ class Capital {
     private String country;
     private String[] hiddenWord;
     private ArrayList<String> notInWord = new ArrayList<String>();
+    private ArrayList<String> alreadyGuessed = new ArrayList<String>();
 
     public Capital(String name, String country) {
         this.name = name.toUpperCase();
@@ -29,6 +30,10 @@ class Capital {
 
     public ArrayList<String> getNotInWord() {
         return this.notInWord;
+    }
+
+    public ArrayList<String> getAlreadyGuessed() {
+        return this.alreadyGuessed;
     }
 
     public String getNotInWordAsString() {
@@ -53,6 +58,10 @@ class Capital {
 
     public void addLetterToNotInWord(String letter) {
         this.notInWord.add(letter);
+    }
+
+    public void addLetterToAlreadyGuessed(String letter) {
+        this.alreadyGuessed.add(letter);
     }
 
     public void unhideLetter(char letter) {
