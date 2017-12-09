@@ -19,16 +19,10 @@ class Game {
 
         while (!gameIsOver) {
 
-            String userOption;
-            String capitalName = capital.getName();
-            String hint = capital.getHint();
-            int lifes = player.getLifePoints();
-            String notInWord = capital.getNotInWordAsString();
-            int guessingCount = player.getGuessingCount();
+            showInformationToPlay(capital.getName(), capital.getHint(), player.getLifePoints(),
+                                  capital.getNotInWordAsString());
+            String userOption = getOption();
 
-            showInformationToPlay(capitalName, hint, lifes, notInWord);
-
-            userOption = getOption();
             if (userOption.toLowerCase().equals(word)) {
                 gameIsOver = checkGuessedWord();
             } else if (userOption.toLowerCase().equals(letter)) {
@@ -41,17 +35,17 @@ class Game {
             }
 
             if (gameIsOver) {
-                hint = capital.getHint();
-                showInformationToPlay(capitalName, hint, lifes, notInWord);
-                GameView.displayGuessingCountAndTime(guessingCount);
+                showInformationToPlay(capital.getName(), capital.getHint(), player.getLifePoints(),
+                                      capital.getNotInWordAsString());
+                GameView.displayGuessingCountAndTime(player.getGuessingCount());
                 gameIsOver = askToPlayAgain();
             }
         }
     }
 
-    public void showInformationToPlay(String capitalName, String hint, int lifes, String notInWord) {
+    public void showInformationToPlay(String capitalName, String hint, int lives, String notInWord) {
         clearConsole();
-        GameView.displayHintAndLifes(capitalName, hint, lifes);
+        GameView.displayHintAndLives(capitalName, hint, lives);
         if (capital.getNotInWord().size() > 0) {
             GameView.display(notInWord);
         }

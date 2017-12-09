@@ -30,10 +30,10 @@ class GameView {
         return userInput;
     }
 
-    public static void displayHintAndLifes(String name, String hint, int lifes) {
+    public static void displayHintAndLives(String name, String hint, int lives) {
         System.out.println(name);
         System.out.println(hint);
-        System.out.println(lifes);
+        System.out.println("Lives left: " + lives);
     }
 
     public static void display(String string) {
