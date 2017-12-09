@@ -19,31 +19,27 @@ class Game {
         final String LETTER = "l";
         boolean gameIsOver = false;
         double timeInSeconds;
+        String userOption = "";
 
         while (!gameIsOver) {
 
-            showGameHints(capital.getName(), capital.getHint(), player.getLifePoints(),
-                                  capital.getNotInWordAsString());
+            showGameHints(capital.getName(), capital.getHint(), player.getLifePoints(), capital.getNotInWordAsString());
 
-            if (player.getLifePoints() == 1) {
-                GameView.displayCountryName(capital.getCountry());
-            }
+            if (player.getLifePoints() == 1) {GameView.displayCountryName(capital.getCountry());}
 
-            String userOption = getOption();
+            userOption = getOption();
             if (userOption.toLowerCase().equals(WORD)) {
                 gameIsOver = checkGuessedWord();
             } else if (userOption.toLowerCase().equals(LETTER)) {
                 gameIsOver = checkGuessedLetter();
             }
 
-            if (player.getLifePoints() <= 0) {
-                gameIsOver = true;
-            }
+            if (player.getLifePoints() <= 0) {gameIsOver = true;}
 
             if (gameIsOver) {
                 player.calculateTime();
-                showGameHints(capital.getName(), capital.getHint(), player.getLifePoints(),
-                                      capital.getNotInWordAsString());
+                showGameHints(capital.getName(), capital.getHint(),
+                              player.getLifePoints(),capital.getNotInWordAsString());
                 if (player.getLifePoints() <= 0) {
                     GameView.displayLoseMessage();
                 } else {

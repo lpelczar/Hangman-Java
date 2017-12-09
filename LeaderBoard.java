@@ -4,9 +4,7 @@ class LeaderBoard {
 
     private ArrayList<Score> scores = new ArrayList<Score>();
 
-    LeaderBoard() {
-        this.scores = scores;
-    }
+    LeaderBoard() {}
 
     public void addScore(String name, Date date, double guessingTime, int guessingTries, String guessedWord) {
         this.scores.add(new Score(name, date, guessingTime, guessingTries, guessedWord));
