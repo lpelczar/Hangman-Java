@@ -7,6 +7,7 @@ class Capital {
     String name;
     String country;
     String[] hiddenWord;
+    ArrayList<String> notInWord = new ArrayList<String>();
 
     public Capital(String name, String country) {
         this.name = name;

@@ -54,6 +54,13 @@ class Game {
         boolean gameIsOver = false;
         char letter = getGuessedLetter();
 
+        if (capital.name.toUpperCase().contains(Character.toString(letter).toUpperCase())) {
+            // capital.unhideLetter(letter);
+        } else {
+            GameView.displayLetterNotInWordMessage();
+            // capital.addLetterToNotInWord(letter);
+            player.decrementLifePoints();
+        }
 
 
         return gameIsOver;

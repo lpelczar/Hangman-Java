@@ -39,5 +39,9 @@ class GameView {
         System.out.println("It is not a letter!");
     }
 
+    public static void displayLetterNotInWordMessage() {
+        System.out.println("Letter not in word! You lose 1 life point!");
+    }
+
 
 }
