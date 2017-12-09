@@ -26,11 +26,7 @@ class Game {
             String notInWord = capital.getNotInWordAsString();
             int guessingCount = player.getGuessingCount();
 
-            clearConsole();
-            GameView.displayHintAndLifes(capitalName, hint, lifes);
-            if (capital.getNotInWord().size() > 0) {
-                GameView.display(notInWord);
-            }
+            showInformationToPlay(capitalName, hint, lifes, notInWord);
 
             userOption = getOption();
             if (userOption.toLowerCase().equals(word)) {
@@ -45,9 +41,19 @@ class Game {
             }
 
             if (gameIsOver) {
+                hint = capital.getHint();
+                showInformationToPlay(capitalName, hint, lifes, notInWord);
                 GameView.displayGuessingCountAndTime(guessingCount);
                 gameIsOver = askToPlayAgain();
             }
+        }
+    }
+
+    public void showInformationToPlay(String capitalName, String hint, int lifes, String notInWord) {
+        clearConsole();
+        GameView.displayHintAndLifes(capitalName, hint, lifes);
+        if (capital.getNotInWord().size() > 0) {
+            GameView.display(notInWord);
         }
     }
 

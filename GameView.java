@@ -65,7 +65,7 @@ class GameView {
     }
 
     public static void displayGuessingCountAndTime(int count) {
-        System.out.println("It took you: " + count + " guesses.");
+        System.out.println("You guessed after: " + count + " letters.");
     }
 
 
