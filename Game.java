@@ -26,9 +26,9 @@ class Game {
             }
             String userOption = getOption();
 
-            if (userOption.equals(word)) {
+            if (userOption.toLowerCase().equals(word)) {
                 gameIsOver = checkGuessedWord();
-            } else if (userOption.equals(letter)) {
+            } else if (userOption.toLowerCase().equals(letter)) {
                 gameIsOver = checkGuessedLetter();
             }
 
