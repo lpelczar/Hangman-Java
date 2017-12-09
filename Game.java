@@ -52,6 +52,9 @@ class Game {
         while (!userInputInCorrectOptions) {
             userInput = GameView.getOptionInput();
             userInputInCorrectOptions = Arrays.asList(correctOptions).contains(userInput.toLowerCase());
+            if (!userInputInCorrectOptions) {
+                GameView.displayWrongInput();
+            }
         }
         return userInput;
     }
@@ -120,6 +123,9 @@ class Game {
         while (!userInputInCorrectOptions) {
             userInput = GameView.getPlayAgainInput();
             userInputInCorrectOptions = Arrays.asList(correctOptions).contains(userInput.toLowerCase());
+            if (!userInputInCorrectOptions) {
+                GameView.displayWrongInput();
+            }
         }
 
         if (userInput.toLowerCase().equals(correctOptions[0])) {

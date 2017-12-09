@@ -50,5 +50,9 @@ class GameView {
         System.out.println("Letter not in word! You lose 1 life point!");
     }
 
+    public static void displayWrongInput() {
+        System.out.println("Wrong input!");
+    }
+
 
 }
