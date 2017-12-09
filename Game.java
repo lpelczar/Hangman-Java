@@ -21,6 +21,9 @@ class Game {
             System.out.println(capital.getName());
             System.out.println(capital.getHiddenWordAsString());
             System.out.println(player.getLifePoints());
+            if (capital.getNotInWord().size() > 0) {
+            System.out.println(capital.getNotInWordAsString());
+            }
             String userOption = getOption();
 
             if (userOption.equals(word)) {
@@ -54,11 +57,11 @@ class Game {
         boolean gameIsOver = false;
         char letter = getGuessedLetter();
 
-        if (capital.name.toUpperCase().contains(Character.toString(letter).toUpperCase())) {
-            // capital.unhideLetter(letter);
+        if (capital.getName().toUpperCase().contains(Character.toString(letter).toUpperCase())) {
+            capital.unhideLetter(letter);
         } else {
             GameView.displayLetterNotInWordMessage();
-            // capital.addLetterToNotInWord(letter);
+            capital.addLetterToNotInWord(Character.toString(letter).toUpperCase());
             player.decrementLifePoints();
         }
 

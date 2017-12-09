@@ -4,13 +4,13 @@ import java.util.*;
 
 class Capital {
 
-    String name;
-    String country;
-    String[] hiddenWord;
-    ArrayList<String> notInWord = new ArrayList<String>();
+    private String name;
+    private String country;
+    private String[] hiddenWord;
+    private ArrayList<String> notInWord = new ArrayList<String>();
 
     public Capital(String name, String country) {
-        this.name = name;
+        this.name = name.toUpperCase();
         this.country = country;
         this.hiddenWord = name.replaceAll("[A-Za-z]", "_").split("");
     }
@@ -27,12 +27,36 @@ class Capital {
         return this.hiddenWord;
     }
 
+    public ArrayList<String> getNotInWord() {
+        return this.notInWord;
+    }
+
+    public String getNotInWordAsString() {
+        return "Not in word: " + String.join(" ", this.notInWord);
+    }
+
     public String getHiddenWordAsString() {
         return String.join(" ", this.hiddenWord);
     }
 
     public boolean isWordEqualCapitalName(String word) {
         return word.equalsIgnoreCase(this.name);
+    }
+
+    public void addLetterToNotInWord(String letter) {
+        this.notInWord.add(letter);
+    }
+
+    public void unhideLetter(char letter) {
+        char[] word = this.name.toCharArray();
+
+        int index = 0;
+        for (char i : word) {
+            if (Character.toUpperCase(letter) == i) {
+                this.hiddenWord[index] = Character.toString(letter).toUpperCase();
+            }
+            index++;
+        }
     }
 
     public static Capital getRandomCapital() {
