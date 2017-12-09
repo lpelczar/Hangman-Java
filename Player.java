@@ -12,6 +12,9 @@ class Player {
     }
 
     public int getLifePoints() {
+        if (this.lifePoints < 0) {
+            this.lifePoints = 0;
+        }
         return this.lifePoints;
     }
 

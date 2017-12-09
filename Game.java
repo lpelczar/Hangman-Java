@@ -36,7 +36,7 @@ class Game {
                 gameIsOver = checkGuessedLetter();
             }
 
-            if (player.getLifePoints() == 0) {
+            if (player.getLifePoints() <= 0) {
                 gameIsOver = true;
             }
 
@@ -44,7 +44,7 @@ class Game {
                 player.calculateTime();
                 showGameHints(capital.getName(), capital.getHint(), player.getLifePoints(),
                                       capital.getNotInWordAsString());
-                if (player.getLifePoints() == 0) {
+                if (player.getLifePoints() <= 0) {
                     GameView.displayLoseMessage();
                 } else {
                     GameView.displayWinMessage();
@@ -135,7 +135,9 @@ class Game {
             gameIsOver = true;
         } else {
             player.decrementLifePointsByValue(WORD);
-            GameView.displayWrongWordMessage();
+            if (!(player.getLifePoints() <= 0)) {
+                GameView.displayWrongWordMessage();
+            }
         }
         return gameIsOver;
     }
