@@ -26,6 +26,11 @@ class Game {
             if (userOption.equals(word)) {
                 gameIsOver = checkGuessedWord();
             }
+
+            if (player.getLifePoints() == 0) {
+                GameView.displayLoseMessage();
+                gameIsOver = true;
+            }
         }
     }
 

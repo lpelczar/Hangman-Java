@@ -24,5 +24,9 @@ class GameView {
         System.out.println("Wrong word! You lose 1 life point!");
     }
 
+    public static void displayLoseMessage() {
+        System.out.println("You lose!");
+    }
+
 
 }
