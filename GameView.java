@@ -16,6 +16,13 @@ class GameView {
         return userInput;
     }
 
+    public static String getGuessedLetterInput() {
+        System.out.print("Enter a letter: ");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        return userInput;
+    }
+
     public static void displayWinMessage() {
         System.out.println("Congratulations! You win!");
     }
@@ -26,6 +33,10 @@ class GameView {
 
     public static void displayLoseMessage() {
         System.out.println("You lose!");
+    }
+
+    public static void displayNotLetterMessage() {
+        System.out.println("It is not a letter!");
     }
 
 

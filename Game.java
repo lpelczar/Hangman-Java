@@ -25,6 +25,8 @@ class Game {
 
             if (userOption.equals(word)) {
                 gameIsOver = checkGuessedWord();
+            } else if (userOption.equals(letter)) {
+                gameIsOver = checkGuessedLetter();
             }
 
             if (player.getLifePoints() == 0) {
@@ -62,5 +64,33 @@ class Game {
         return gameIsOver;
     }
 
+    public boolean checkGuessedLetter() {
+
+        boolean gameIsOver = false;
+        char letter = getGuessedLetter();
+
+        System.out.println(letter);
+
+        return gameIsOver;
+    }
+
+    public static char getGuessedLetter() {
+
+        boolean inputIsLetter = false;
+        String userInput = "";
+
+        while (!inputIsLetter) {
+
+            userInput = GameView.getGuessedLetterInput();
+            if (userInput.length() > 1 || !Character.isLetter(userInput.charAt(0))) {
+                GameView.displayNotLetterMessage();
+            } else {
+            inputIsLetter = true;
+            }
+        }
+
+        char letter = userInput.charAt(0);
+        return letter;
+    }
 
 }
