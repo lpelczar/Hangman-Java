@@ -18,6 +18,7 @@ class Game {
         boolean gameIsOver = false;
 
         while (!gameIsOver) {
+            clearConsole();
             System.out.println(capital.getName());
             System.out.println(capital.getHint());
             System.out.println(player.getLifePoints());
@@ -136,6 +137,11 @@ class Game {
             gameIsOver = true;
         }
         return gameIsOver;
+    }
+
+    public static void clearConsole() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
 }
