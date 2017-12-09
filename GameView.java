@@ -79,9 +79,8 @@ class GameView {
         System.out.println("You have already guessed that letter!");
     }
 
-    public static void displayGuessingCountAndTime(int count, long time) {
-        double seconds = (double)time / 1000000000.0;
+    public static void displayGuessingCountAndTime(int count, double time) {
         DecimalFormat df = new DecimalFormat("#.##");
-        System.out.println("You tried: " + count + " letters. And game took you " + df.format(seconds) + " seconds.");
+        System.out.println("You tried: " + count + " letters. And game took you " + df.format(time) + " seconds.");
     }
 }

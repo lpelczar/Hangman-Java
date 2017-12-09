@@ -18,7 +18,7 @@ class Game {
         final String WORD = "w";
         final String LETTER = "l";
         boolean gameIsOver = false;
-        long estimatedTime;
+        double timeInSeconds;
 
         while (!gameIsOver) {
 
@@ -41,8 +41,7 @@ class Game {
             }
 
             if (gameIsOver) {
-                estimatedTime = System.nanoTime() - player.getStartTime();
-                double timeInSeconds = (double)estimatedTime / 1000000000.0;
+                player.calculateTime();
                 showGameHints(capital.getName(), capital.getHint(), player.getLifePoints(),
                                       capital.getNotInWordAsString());
                 if (player.getLifePoints() == 0) {
@@ -50,14 +49,14 @@ class Game {
                 } else {
                     GameView.displayWinMessage();
                 }
-                GameView.displayGuessingCountAndTime(player.getGuessingCount(), estimatedTime);
+                GameView.displayGuessingCountAndTime(player.getGuessingCount(), player.getGuessingTime());
                 this.leaderboard.displayScores();
                 gameIsOver = askToPlayAgain();
             }
         }
     }
 
-    public void showGameHints(String capitalName, String hint, int lives, String notInWord) {
+    private void showGameHints(String capitalName, String hint, int lives, String notInWord) {
         clearConsole();
         GameView.displayHintAndLives(capitalName, hint, lives);
         if (capital.getNotInWord().size() > 0) {
@@ -65,7 +64,7 @@ class Game {
         }
     }
 
-    public String getOption() {
+    private String getOption() {
 
         final String[] CORRECT_OPTIONS = {"l", "w"};
         String userInput = "";
@@ -81,7 +80,7 @@ class Game {
         return userInput;
     }
 
-    public boolean checkGuessedLetter() {
+    private boolean checkGuessedLetter() {
 
         final int LETTER = 1;
         boolean gameIsOver = false;
@@ -103,7 +102,7 @@ class Game {
         return gameIsOver;
     }
 
-    public char getGuessedLetter() {
+    private char getGuessedLetter() {
 
         boolean correctInput = false;
         String userInput = "";
@@ -125,7 +124,7 @@ class Game {
         return letter;
     }
 
-    public boolean checkGuessedWord() {
+    private boolean checkGuessedWord() {
 
         final int WORD = 2;
         boolean gameIsOver = false;
@@ -141,7 +140,7 @@ class Game {
         return gameIsOver;
     }
 
-    public boolean askToPlayAgain() {
+    private boolean askToPlayAgain() {
 
         boolean gameIsOver;
         String[] CORRECT_OPTIONS = {"y", "n"};
@@ -166,7 +165,7 @@ class Game {
         return gameIsOver;
     }
 
-    public static void clearConsole() {
+    private static void clearConsole() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
