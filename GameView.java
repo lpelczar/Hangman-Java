@@ -17,6 +17,13 @@ class GameView {
         return userInput;
     }
 
+    public static String getUserName() {
+        System.out.print("Enter your name to add your score to leaderboard: ");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        return userInput;
+    }
+
     public static String getGuessedLetterInput() {
         System.out.print("Enter a letter: ");
         Scanner scanner = new Scanner(System.in);
@@ -82,5 +89,13 @@ class GameView {
     public static void displayGuessingCountAndTime(int count, double time) {
         DecimalFormat df = new DecimalFormat("#.##");
         System.out.println("You tried: " + count + " letters. And game took you " + df.format(time) + " seconds.");
+    }
+
+    public static void displayLeaderBoard(ArrayList<Score> scores) {
+        System.out.println("\nLeaderboard: ");
+        for (Score s : scores) {
+            System.out.println(s.getName() + " | " + s.getDate() + " | " + s.getGuessingTime() + " | " +
+                               s.getGuessingTries() + " | " + s.getGuessedWord());
+        }
     }
 }

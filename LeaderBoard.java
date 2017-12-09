@@ -16,8 +16,6 @@ class LeaderBoard {
 
     public void displayScores() {
         sortScores();
-        for (Score s : this.scores) {
-            System.out.println(s.getName());
-        }
+        GameView.displayLeaderBoard(this.scores);
     }
 }
