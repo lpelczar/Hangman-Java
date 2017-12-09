@@ -15,14 +15,17 @@ class Game {
 
         String word = "w";
         String letter = "l";
+        boolean gameIsOver = false;
 
-        System.out.println(capital.getName());
-        System.out.println(capital.getHiddenWordAsString());
-        System.out.println(player.getLifePoints());
-        String userOption = getOption();
+        while (!gameIsOver) {
+            System.out.println(capital.getName());
+            System.out.println(capital.getHiddenWordAsString());
+            System.out.println(player.getLifePoints());
+            String userOption = getOption();
 
-        if (userOption.equals(word)) {
-            guessWord();
+            if (userOption.equals(word)) {
+                gameIsOver = checkGuessedWord();
+            }
         }
     }
 
@@ -39,15 +42,19 @@ class Game {
         return userInput;
     }
 
-    public void guessWord() {
+    public boolean checkGuessedWord() {
 
+        boolean gameIsOver = false;
         String word = GameView.getGuessedWord();
+
         if (capital.isWordEqualCapitalName(word)) {
             GameView.displayWinMessage();
+            gameIsOver = true;
         } else {
-            player.decrementLifePoints();
+            // player.decrementLifePoints();
             GameView.displayWrongWordMessage();
         }
+        return gameIsOver;
     }
 
 

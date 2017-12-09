@@ -31,7 +31,7 @@ class Capital {
     }
 
     public boolean isWordEqualCapitalName(String word) {
-        return word == this.name;
+        return word.equals(this.name);
     }
 
     public static Capital getRandomCapital() {
