@@ -64,5 +64,9 @@ class GameView {
         System.out.println("Wrong input!");
     }
 
+    public static void displayGuessingCountAndTime(int count) {
+        System.out.println("It took you: " + count + " guesses.");
+    }
+
 
 }
