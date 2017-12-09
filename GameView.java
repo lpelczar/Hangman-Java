@@ -30,6 +30,16 @@ class GameView {
         return userInput;
     }
 
+    public static void displayHintAndLifes(String name, String hint, int lifes) {
+        System.out.println(name);
+        System.out.println(hint);
+        System.out.println(lifes);
+    }
+
+    public static void display(String string) {
+        System.out.println(string);
+    }
+
     public static void displayWinMessage() {
         System.out.println("Congratulations! You win!");
     }

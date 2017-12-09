@@ -18,12 +18,16 @@ class Game {
         boolean gameIsOver = false;
 
         while (!gameIsOver) {
+
+            String capitalName = capital.getName();
+            String hint = capital.getHint();
+            int lifes = player.getLifePoints();
+            String notInWord = capital.getNotInWordAsString();
+
             clearConsole();
-            System.out.println(capital.getName());
-            System.out.println(capital.getHint());
-            System.out.println(player.getLifePoints());
+            GameView.displayHintAndLifes(capitalName, hint, lifes);
             if (capital.getNotInWord().size() > 0) {
-            System.out.println(capital.getNotInWordAsString());
+                GameView.display(notInWord);
             }
             String userOption = getOption();
 
