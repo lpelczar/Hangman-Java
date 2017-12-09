@@ -4,11 +4,13 @@ class Game {
 
     private Capital capital;
     private Player player;
+    private LeaderBoard leaderboard;
 
     public Game() {
 
         this.capital = Capital.getRandomCapital();
         this.player = new Player();
+        this.leaderboard = new LeaderBoard();
     }
 
     public void start() {
@@ -40,6 +42,7 @@ class Game {
 
             if (gameIsOver) {
                 estimatedTime = System.nanoTime() - player.getStartTime();
+                double timeInSeconds = (double)estimatedTime / 1000000000.0;
                 showGameHints(capital.getName(), capital.getHint(), player.getLifePoints(),
                                       capital.getNotInWordAsString());
                 if (player.getLifePoints() == 0) {
@@ -48,6 +51,7 @@ class Game {
                     GameView.displayWinMessage();
                 }
                 GameView.displayGuessingCountAndTime(player.getGuessingCount(), estimatedTime);
+                this.leaderboard.displayScores();
                 gameIsOver = askToPlayAgain();
             }
         }
