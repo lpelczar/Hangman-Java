@@ -23,6 +23,13 @@ class GameView {
         return userInput;
     }
 
+    public static String getPlayAgainInput() {
+        System.out.print("Do you want to play again? (y or n) ");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        return userInput;
+    }
+
     public static void displayWinMessage() {
         System.out.println("Congratulations! You win!");
     }

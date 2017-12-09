@@ -36,6 +36,10 @@ class Game {
                 GameView.displayLoseMessage();
                 gameIsOver = true;
             }
+
+            if (gameIsOver) {
+                gameIsOver = askToPlayAgain();
+            }
         }
     }
 
@@ -102,6 +106,28 @@ class Game {
         } else {
             player.decrementLifePoints();
             GameView.displayWrongWordMessage();
+        }
+        return gameIsOver;
+    }
+
+    public boolean askToPlayAgain() {
+
+        boolean gameIsOver;
+        String[] correctOptions = {"y", "n"};
+        String userInput = "";
+        boolean userInputInCorrectOptions = false;
+
+        while (!userInputInCorrectOptions) {
+            userInput = GameView.getPlayAgainInput();
+            userInputInCorrectOptions = Arrays.asList(correctOptions).contains(userInput.toLowerCase());
+        }
+
+        if (userInput.toLowerCase().equals(correctOptions[0])) {
+            gameIsOver = false;
+            this.capital = Capital.getRandomCapital();
+            this.player = new Player();
+        } else {
+            gameIsOver = true;
         }
         return gameIsOver;
     }
