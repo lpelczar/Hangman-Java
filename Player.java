@@ -22,8 +22,8 @@ class Player {
         return this.guessingCount;
     }
 
-    public void decrementLifePoints() {
-        this.lifePoints--;
+    public void decrementLifePointsByValue(int value) {
+        this.lifePoints -= value;
     }
 
     public void incrementGuessingCount() {
