@@ -2,10 +2,16 @@ class Player {
 
     private int lifePoints;
     private int guessingCount;
+    private long startTime;
 
     public Player() {
         this.lifePoints = 10;
         this.guessingCount = 0;
+        this.startTime = System.nanoTime();
+    }
+
+    public long getStartTime() {
+        return this.startTime;
     }
 
     public int getLifePoints() {

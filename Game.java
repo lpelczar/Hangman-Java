@@ -16,6 +16,7 @@ class Game {
         String word = "w";
         String letter = "l";
         boolean gameIsOver = false;
+        long estimatedTime;
 
         while (!gameIsOver) {
 
@@ -35,9 +36,10 @@ class Game {
             }
 
             if (gameIsOver) {
+                estimatedTime = System.nanoTime() - player.getStartTime();
                 showInformationToPlay(capital.getName(), capital.getHint(), player.getLifePoints(),
                                       capital.getNotInWordAsString());
-                GameView.displayGuessingCountAndTime(player.getGuessingCount());
+                GameView.displayGuessingCountAndTime(player.getGuessingCount(), estimatedTime);
                 gameIsOver = askToPlayAgain();
             }
         }

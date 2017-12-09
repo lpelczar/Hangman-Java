@@ -1,4 +1,5 @@
 import java.util.*;
+import java.text.DecimalFormat;
 
 class GameView {
 
@@ -64,8 +65,10 @@ class GameView {
         System.out.println("Wrong input!");
     }
 
-    public static void displayGuessingCountAndTime(int count) {
-        System.out.println("You guessed after: " + count + " letters.");
+    public static void displayGuessingCountAndTime(int count, long time) {
+        double seconds = (double)time / 1000000000.0;
+        DecimalFormat df = new DecimalFormat("#.##");
+        System.out.println("You guessed after: " + count + " letters. And " + df.format(seconds) + " seconds.");
     }
 
 
