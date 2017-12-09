@@ -36,6 +36,10 @@ class Capital {
     }
 
     public String getHiddenWordAsString() {
+        return String.join("", this.hiddenWord);
+    }
+
+    public String getHint() {
         return String.join(" ", this.hiddenWord);
     }
 
