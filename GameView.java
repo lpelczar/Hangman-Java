@@ -45,10 +45,6 @@ class GameView {
         System.out.print("Congratulations! You win! ");
     }
 
-    public static void displayWrongWordMessage() {
-        System.out.println("Wrong word! You lose 1 life point!");
-    }
-
     public static void displayLoseMessage() {
         System.out.print("You lose! ");
     }
@@ -59,6 +55,16 @@ class GameView {
 
     public static void displayLetterNotInWordMessage() {
         System.out.println("Letter not in word! You lose 1 life point!");
+        System.out.print("Press any key to continue.");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+    }
+
+    public static void displayWrongWordMessage() {
+        System.out.println("Wrong word! You lose 2 life point!");
+        System.out.print("Press any key to continue.");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
     }
 
     public static void displayWrongInput() {
