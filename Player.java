@@ -10,4 +10,8 @@ class Player {
         return this.lifePoints;
     }
 
+    public void decrementLifePoints() {
+        this.lifePoints--;
+    }
+
 }

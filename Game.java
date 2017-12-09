@@ -51,7 +51,7 @@ class Game {
             GameView.displayWinMessage();
             gameIsOver = true;
         } else {
-            // player.decrementLifePoints();
+            player.decrementLifePoints();
             GameView.displayWrongWordMessage();
         }
         return gameIsOver;
