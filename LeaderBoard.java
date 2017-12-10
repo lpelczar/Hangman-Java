@@ -41,6 +41,7 @@ class LeaderBoard {
 		}
     }
 
+    @SuppressWarnings("unchecked")
     private void deserializeScores() {
 
         try {
