@@ -23,9 +23,7 @@ class Game {
 
         while (!gameIsOver) {
 
-            showGameHints(capital.getName(), capital.getHint(), player.getLifePoints(), capital.getNotInWordAsString());
-            GameView.displayAsciiArt(player.getLifePoints());
-            
+            showGameHints();
             if (player.getLifePoints() == 1) {GameView.displayCountryName(capital.getCountry());}
 
             userOption = getOption();
@@ -39,9 +37,7 @@ class Game {
 
             if (gameIsOver) {
                 player.calculateTime();
-                showGameHints(capital.getName(), capital.getHint(),
-                              player.getLifePoints(), capital.getNotInWordAsString());
-                GameView.displayAsciiArt(player.getLifePoints());
+                showGameHints();
                 if (player.getLifePoints() <= 0) {
                     GameView.displayLoseMessage();
                 } else {
@@ -56,12 +52,13 @@ class Game {
         }
     }
 
-    private void showGameHints(String capitalName, String hint, int lives, String notInWord) {
+    private void showGameHints() {
         clearConsole();
-        GameView.displayHintAndLives(capitalName, hint, lives);
+        GameView.displayHintAndLives(capital.getName(), capital.getHint(), player.getLifePoints());
         if (capital.getNotInWord().size() > 0) {
-            GameView.display(notInWord);
+            GameView.display(capital.getNotInWordAsString());
         }
+        GameView.displayAsciiArt(player.getLifePoints());
     }
 
     private String getOption() {
