@@ -18,42 +18,22 @@ class Score implements Serializable {
         this.guessedWord = guessedWord;
     }
 
-	/**
-	* Returns value of name
-	* @return
-	*/
 	public String getName() {
 		return name;
 	}
 
-	/**
-	* Returns value of date
-	* @return
-	*/
 	public Date getDate() {
 		return date;
 	}
 
-	/**
-	* Returns value of guessingTime
-	* @return
-	*/
 	public double getGuessingTime() {
 		return guessingTime;
 	}
 
-	/**
-	* Returns value of guessingTries
-	* @return
-	*/
 	public int getGuessingTries() {
 		return guessingTries;
 	}
 
-	/**
-	* Returns value of guessedWord
-	* @return
-	*/
 	public String getGuessedWord() {
 		return guessedWord;
 	}

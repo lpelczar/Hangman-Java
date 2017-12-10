@@ -25,7 +25,7 @@ class LeaderBoard {
         GameView.displayLeaderBoard(this.scores);
     }
 
-    public void serializeScores() {
+    private void serializeScores() {
 
         try {
 			// write object to file
@@ -41,7 +41,7 @@ class LeaderBoard {
 		}
     }
 
-    public void deserializeScores() {
+    private void deserializeScores() {
 
         try {
 			// read object from file
