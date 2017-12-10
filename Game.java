@@ -80,7 +80,7 @@ class Game {
 
     private boolean checkGuessedLetter() {
 
-        final int LETTER_GUESSING = 1;
+        final int LETTER_GUESSING_DECREMENT = 1;
         boolean gameIsOver = false;
         char letter = getGuessedLetter();
 
@@ -94,7 +94,7 @@ class Game {
         } else {
             GameView.displayLetterNotInWordMessage();
             capital.addLetterToNotInWord(Character.toString(letter).toUpperCase());
-            player.decrementLifePointsByValue(LETTER_GUESSING);
+            player.decrementLifePointsByValue(LETTER_GUESSING_DECREMENT);
         }
 
         return gameIsOver;
@@ -124,7 +124,7 @@ class Game {
 
     private boolean checkGuessedWord() {
 
-        final int WORD_GUESSING = 2;
+        final int WORD_GUESSING_DECREMENT = 2;
         boolean gameIsOver = false;
         String word = GameView.getGuessedWord();
 
@@ -132,7 +132,7 @@ class Game {
             capital.makeHiddenWordEqualWord();
             gameIsOver = true;
         } else {
-            player.decrementLifePointsByValue(WORD_GUESSING);
+            player.decrementLifePointsByValue(WORD_GUESSING_DECREMENT);
             if (!(player.getLifePoints() <= 0)) {
                 GameView.displayWrongWordMessage();
             }

@@ -92,9 +92,16 @@ class GameView {
     }
 
     public static void displayLeaderBoard(ArrayList<Score> scores) {
+        List<Score> shortenScores;
+
+        if (scores.size() > 10) {
+            shortenScores = scores.subList(0, 10);
+        } else {
+            shortenScores = scores;
+        }
         if (scores.size() > 0) {
-            System.out.println("\nLeaderboard: ");
-            for (Score s : scores) {
+            System.out.println("\nLeaderboard (TOP 10): ");
+            for (Score s : shortenScores) {
                 System.out.println(s.getName() + " | " + s.getDate() + " | " + s.getGuessingTime() + " | " +
                                    s.getGuessingTries() + " | " + s.getGuessedWord());
             }
