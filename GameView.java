@@ -93,9 +93,14 @@ class GameView {
 
     public static void displayLeaderBoard(ArrayList<Score> scores) {
         System.out.println("\nLeaderboard: ");
-        for (Score s : scores) {
-            System.out.println(s.getName() + " | " + s.getDate() + " | " + s.getGuessingTime() + " | " +
-                               s.getGuessingTries() + " | " + s.getGuessedWord());
+
+        if (scores.size() == 0) {
+            System.out.println("List is empty!");
+        } else {
+            for (Score s : scores) {
+                System.out.println(s.getName() + " | " + s.getDate() + " | " + s.getGuessingTime() + " | " +
+                                   s.getGuessingTries() + " | " + s.getGuessedWord());
+            }
         }
     }
 }

@@ -45,7 +45,7 @@ class Game {
                 } else {
                     GameView.displayWinMessage();
                     this.leaderboard.addScore(GameView.getUserName(), new Date(), player.getGuessingTime(),
-                                              player.getGuessingCount(), capital.getName());
+                                             player.getGuessingCount(), capital.getName());
                 }
                 GameView.displayGuessingCountAndTime(player.getGuessingCount(), player.getGuessingTime());
                 this.leaderboard.displayScores();
