@@ -13,7 +13,7 @@ class Capital {
     public Capital(String name, String country) {
         this.name = name.toUpperCase();
         this.country = country;
-        this.hiddenWord = name.replaceAll("[A-Za-z]", "_").split("");
+        this.hiddenWord = name.replaceAll("[^\\s]", "_").split("");
     }
 
     public String getName() {
