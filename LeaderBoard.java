@@ -52,11 +52,13 @@ class LeaderBoard {
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (EOFException e) {
+            GameView.displayLeaderBoardEmpty();
+        } catch (IOException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}
+		} 
     }
 
 

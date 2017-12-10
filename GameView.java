@@ -92,15 +92,16 @@ class GameView {
     }
 
     public static void displayLeaderBoard(ArrayList<Score> scores) {
-        System.out.println("\nLeaderboard: ");
-
-        if (scores.size() == 0) {
-            System.out.println("List is empty!");
-        } else {
+        if (scores.size() > 0) {
+            System.out.println("\nLeaderboard: ");
             for (Score s : scores) {
                 System.out.println(s.getName() + " | " + s.getDate() + " | " + s.getGuessingTime() + " | " +
                                    s.getGuessingTries() + " | " + s.getGuessedWord());
             }
         }
+    }
+
+    public static void displayLeaderBoardEmpty() {
+        System.out.println("Leaderboard is empty!");
     }
 }
