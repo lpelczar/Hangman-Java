@@ -58,7 +58,7 @@ class LeaderBoard {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		} 
+		}
     }
 
 

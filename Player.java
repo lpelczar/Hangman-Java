@@ -12,9 +12,6 @@ class Player {
     }
 
     public int getLifePoints() {
-        if (this.lifePoints < 0) {
-            this.lifePoints = 0;
-        }
         return this.lifePoints;
     }
 
@@ -27,7 +24,11 @@ class Player {
     }
 
     public void decrementLifePointsByValue(int value) {
-        this.lifePoints -= value;
+        if ((this.lifePoints - value) < 0) {
+            this.lifePoints = 0;
+        } else {
+            this.lifePoints -= value;
+        }
     }
 
     public void incrementGuessingCount() {
