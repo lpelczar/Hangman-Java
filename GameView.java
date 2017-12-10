@@ -119,6 +119,22 @@ public class GameView {
         }
     }
 
+    static void displayAsciiArt(int livesLeft) {
+        if (livesLeft <= 10 && livesLeft > 8) {
+            System.out.println(AsciiReader.readAscii(58, 68));
+        } else if (livesLeft <= 8 && livesLeft > 6) {
+            System.out.println(AsciiReader.readAscii(48, 57));
+        } else if (livesLeft <= 6 && livesLeft > 4) {
+            System.out.println(AsciiReader.readAscii(37, 46));
+        } else if (livesLeft <= 4 && livesLeft > 2) {
+            System.out.println(AsciiReader.readAscii(26, 35));
+        } else if (livesLeft <= 2 && livesLeft > 0) {
+            System.out.println(AsciiReader.readAscii(14, 23));
+        } else {
+            System.out.println(AsciiReader.readAscii(2, 11));
+        }
+    }
+
     public static void displayLeaderBoardEmpty() {
         System.out.println("Leaderboard is empty!");
     }
