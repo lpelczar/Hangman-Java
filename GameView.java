@@ -1,5 +1,7 @@
 import java.util.*;
+import java.text.SimpleDateFormat;
 import java.text.DecimalFormat;
+
 
 public class GameView {
 
@@ -102,8 +104,8 @@ public class GameView {
         if (scores.size() > 0) {
             System.out.println("\nLeaderboard (TOP 10): ");
             for (Score s : shortenScores) {
-                System.out.println(s.getName() + " | " + s.getDate() + " | " + s.getGuessingTime() + " | " +
-                                   s.getGuessingTries() + " | " + s.getGuessedWord());
+                System.out.println(s.getName() + " | " + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(s.getDate())
+                + " | " + s.getGuessingTime() + " | " + s.getGuessingTries() + " | " + s.getGuessedWord());
             }
         }
     }
