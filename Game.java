@@ -8,7 +8,7 @@ class Game {
 
     public Game() {
 
-        this.capital = Capital.getRandomCapital();
+        this.capital = CapitalReader.getRandomCapital();
         this.player = new Player();
         this.leaderboard = new LeaderBoard();
     }
@@ -157,7 +157,7 @@ class Game {
 
         if (userInput.toLowerCase().equals(CORRECT_OPTIONS[0])) {
             gameIsOver = false;
-            this.capital = Capital.getRandomCapital();
+            this.capital = CapitalReader.getRandomCapital();
             this.player = new Player();
         } else {
             gameIsOver = true;
