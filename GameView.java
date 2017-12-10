@@ -88,6 +88,10 @@ public class GameView {
         System.out.println("You have already guessed that letter!");
     }
 
+    static void displayWordError() {
+        System.out.println("Please enter a word!");
+    }
+
     static void displayGuessingCountAndTime(int count, double time) {
         DecimalFormat df = new DecimalFormat("#.##");
         System.out.println("You tried: " + count + " letters. And game took you " + df.format(time) + " seconds.");

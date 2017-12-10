@@ -126,7 +126,17 @@ class Game {
 
         final int WORD_GUESSING_DECREMENT = 2;
         boolean gameIsOver = false;
-        String word = GameView.getGuessedWord();
+        boolean isWordCorrect = false;
+        String word = "";
+
+        while (!isWordCorrect) {
+            word = GameView.getGuessedWord();
+            if (word.length() == 0) {
+                GameView.displayWordError();
+            } else {
+                isWordCorrect = true;
+            }
+        }
 
         if (capital.isWordEqualCapitalName(word)) {
             capital.makeHiddenWordEqualWord();
