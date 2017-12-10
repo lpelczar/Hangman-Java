@@ -6,7 +6,8 @@ import java.text.DecimalFormat;
 public class GameView {
 
     static String getOptionInput() {
-        System.out.print("Do you want to guess a letter or whole word (l or w): ");
+        System.out.print("Do you want to guess a " + Colors.ANSI_GREEN + "l" + Colors.ANSI_RESET +
+                         "etter or whole " + Colors.ANSI_RED + "w" + Colors.ANSI_RESET + "ord: ");
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         return userInput;
