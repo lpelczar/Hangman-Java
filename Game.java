@@ -54,7 +54,7 @@ class Game {
 
     private void showGameHints() {
         clearConsole();
-        GameView.displayHintAndLives(capital.getName(), capital.getHint(), player.getLifePoints());
+        GameView.displayHintAndLives(capital.getHint(), player.getLifePoints());
         if (capital.getNotInWord().size() > 0) {
             GameView.display(capital.getNotInWordAsString());
         }

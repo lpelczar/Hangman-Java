@@ -41,9 +41,8 @@ public class GameView {
         return userInput;
     }
 
-    static void displayHintAndLives(String name, String hint, int lives) {
+    static void displayHintAndLives(String hint, int lives) {
         System.out.println(Colors.ANSI_GREEN + "HANGMAN v.0.1" + Colors.ANSI_RESET);
-        System.out.println(name);
         System.out.println(hint);
         System.out.println(Colors.ANSI_BLUE + "\nLives left: " + Colors.ANSI_RESET + lives);
     }
