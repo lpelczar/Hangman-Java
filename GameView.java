@@ -42,9 +42,10 @@ public class GameView {
     }
 
     static void displayHintAndLives(String name, String hint, int lives) {
+        System.out.println(Colors.ANSI_GREEN + "HANGMAN v.0.1" + Colors.ANSI_RESET);
         System.out.println(name);
         System.out.println(hint);
-        System.out.println("Lives left: " + lives);
+        System.out.println(Colors.ANSI_BLUE + "\nLives left: " + Colors.ANSI_RESET + lives);
     }
 
     static void display(String string) {
@@ -52,15 +53,15 @@ public class GameView {
     }
 
     static void displayWinMessage() {
-        System.out.print("Congratulations! You win! ");
+        System.out.print(Colors.ANSI_GREEN + "Congratulations! You win! " + Colors.ANSI_RESET);
     }
 
     static void displayLoseMessage() {
-        System.out.print("You lose! ");
+        System.out.print(Colors.ANSI_RED + "You lose! " + Colors.ANSI_RESET);
     }
 
     static void displayNotLetterMessage() {
-        System.out.println("It is not a letter!");
+        System.out.println(Colors.ANSI_RED + "It is not a letter!" + Colors.ANSI_RESET);
     }
 
     static void displayLetterNotInWordMessage() {
