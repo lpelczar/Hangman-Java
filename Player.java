@@ -6,7 +6,7 @@ class Player {
     private double guessingTime;
 
     public Player() {
-        this.lifePoints = 5;
+        this.lifePoints = 10;
         this.guessingCount = 0;
         this.startTime = System.nanoTime();
     }
