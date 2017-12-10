@@ -108,7 +108,9 @@ class Game {
         while (!correctInput) {
 
             userInput = GameView.getGuessedLetterInput();
-            if (userInput.length() > 1 || !Character.isLetter(userInput.charAt(0))) {
+            if (userInput.length() == 0) {
+                GameView.displayLetterError();
+            } else if (userInput.length() > 1 || !Character.isLetter(userInput.charAt(0))) {
                 GameView.displayNotLetterMessage();
             } else if (capital.getAlreadyGuessed().contains(userInput.toUpperCase())) {
                 GameView.displayLetterAlreadyGuessed();

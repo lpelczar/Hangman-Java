@@ -92,6 +92,10 @@ public class GameView {
         System.out.println("Please enter a word!");
     }
 
+    static void displayLetterError() {
+        System.out.println("Please enter a letter!");
+    }
+
     static void displayGuessingCountAndTime(int count, double time) {
         DecimalFormat df = new DecimalFormat("#.##");
         System.out.println("You tried: " + count + " letters. And game took you " + df.format(time) + " seconds.");
