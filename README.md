@@ -4,7 +4,7 @@
 
 Top class which starts the Application.
 
-## `public static void main(String[] args)`
+# `public static void main(String[] args)`
 
 Main method of the program - initialize Game and call start method on it.
 
@@ -14,7 +14,7 @@ Main method of the program - initialize Game and call start method on it.
 
 Reads txt file and returns string containing lines from startline to endline.
 
-## `public static String readAscii(int startLine, int endLine)`
+# `public static String readAscii(int startLine, int endLine)`
 
 Read file with Ascii arts and return Ascii art from startline to endline as a String.
 
@@ -27,7 +27,7 @@ Read file with Ascii arts and return Ascii art from startline to endline as a St
 
 Represents Capital word to guess
 
-## `public Capital(String name, String country)`
+# `public Capital(String name, String country)`
 
 Constructor of the Capital
 
@@ -35,78 +35,78 @@ Constructor of the Capital
    * `name` — name of the capital
    * `country` — country of the capital
 
-## `public String getName()`
+# `public String getName()`
 
 Getter of name
 
  * **Returns:** name of the capital
 
-## `public String getCountry()`
+# `public String getCountry()`
 
 Getter of the country
 
  * **Returns:** name of the country
 
-## `public String[] getHiddenWord()`
+# `public String[] getHiddenWord()`
 
 Getter of the hidden word
 
  * **Returns:** word respresented with dashes as a String array
 
-## `public ArrayList<String> getNotInWord()`
+# `public ArrayList<String> getNotInWord()`
 
 Getter of notInWord hint
 
  * **Returns:** hint with guessed letters which are not in guessing word
 
-## `public ArrayList<String> getAlreadyGuessed()`
+# `public ArrayList<String> getAlreadyGuessed()`
 
 Getter of alreadyGuessed letters
 
  * **Returns:** already guessed letters
 
-## `public String getNotInWordAsString()`
+# `public String getNotInWordAsString()`
 
 Get notInWord as a String
 
  * **Returns:** notIsWord as a String
 
-## `public String getHiddenWordAsString()`
+# `public String getHiddenWordAsString()`
 
 Get hidden word as a String
 
  * **Returns:** hidden word as a String
 
-## `public String getHint()`
+# `public String getHint()`
 
 Get hint from hiddenWord
 
  * **Returns:** hiddenWord as a String
 
-## `public boolean isWordEqualCapitalName(String word)`
+# `public boolean isWordEqualCapitalName(String word)`
 
 Chceck if word is equal capital name
 
  * **Parameters:** `word` — entered word by the user
  * **Returns:** true if is equal else false
 
-## `public void makeHiddenWordEqualWord()`
+# `public void makeHiddenWordEqualWord()`
 
 Reveal hidden word to the user - change hiddenWord variable to capital name
 
-## `public void addLetterToNotInWord(String letter)`
+# `public void addLetterToNotInWord(String letter)`
 
 Adds letter to notInWord array
 
  * **Parameters:** `letter` — letter given by user
 
-## `public void addLetterToAlreadyGuessed(String letter)`
+# `public void addLetterToAlreadyGuessed(String letter)`
 
 Adds letter to alreadyGuessed array
 
  * **Parameters:** `letter` — letter given by the user
 
-## `public void unhideLetter(char letter)`
+# `public void unhideLetter(char letter)`
 
 Unhide given letter in hiddenWord
 
@@ -116,13 +116,13 @@ Unhide given letter in hiddenWord
 
 Class for reading capitals from file and creating Capital objects from them
 
-## `public static Capital getRandomCapital()`
+# `public static Capital getRandomCapital()`
 
 Returns random Capital object from list of capitals
 
  * **Returns:** random Capital
 
-## `private static ArrayList<Capital> getCapitalsFromFile()`
+# `private static ArrayList<Capital> getCapitalsFromFile()`
 
 Read file with capitals and create a list containing all Capital objects
 
@@ -136,49 +136,49 @@ Class containing Ansi codes for coloring text in console
 
 Controls the game loop
 
-## `public Game()`
+# `public Game()`
 
 Constructor of the game
 
-## `public void start()`
+# `public void start()`
 
 Starts the game loop and controls the game until the game is not over
 
-## `private void showGameHints()`
+# `private void showGameHints()`
 
 Show all information for the user needed to play, eg. hints, lives, ascii art
 
-## `private String getOption()`
+# `private String getOption()`
 
 Gets option from the user
 
  * **Returns:** user option "l" or "w" representing letter of word
 
-## `private boolean checkGuessedLetter()`
+# `private boolean checkGuessedLetter()`
 
 Checking if guessed letter is correct and update word, if not display appropriate message
 
  * **Returns:** true if all letters are guessed and the game is over else false
 
-## `private char getGuessedLetter()`
+# `private char getGuessedLetter()`
 
 Gets guessed letter from the user and check if it is actually a letter
 
  * **Returns:** letter
 
-## `private boolean checkGuessedWord()`
+# `private boolean checkGuessedWord()`
 
 Checking if word given by user are correct
 
  * **Returns:** true if word is correct and false if not
 
-## `private boolean askToPlayAgain()`
+# `private boolean askToPlayAgain()`
 
 Asks user if he wants to play again
 
  * **Returns:** true if not and false if yes
 
-## `private static void clearConsole()`
+# `private static void clearConsole()`
 
 Clears the console
 
@@ -186,37 +186,37 @@ Clears the console
 
 Display all information to the user in the console
 
-## `static String getOptionInput()`
+# `static String getOptionInput()`
 
 Gets option from the user
 
  * **Returns:** option input
 
-## `static String getGuessedWord()`
+# `static String getGuessedWord()`
 
 Gets guessed word from the user
 
  * **Returns:** guessed word
 
-## `static String getUserName()`
+# `static String getUserName()`
 
 Gets user name to add it to leaderboard
 
  * **Returns:** username
 
-## `static String getGuessedLetterInput()`
+# `static String getGuessedLetterInput()`
 
 Gets guessed letter from the user
 
  * **Returns:** guessed letter
 
-## `static String getPlayAgainInput()`
+# `static String getPlayAgainInput()`
 
 Gets information if user wants to play again
 
  * **Returns:** information if user wants to play again
 
-## `static void displayHintAndLives(String hint, int lives)`
+# `static void displayHintAndLives(String hint, int lives)`
 
 Displays hint and lives left to the user
 
@@ -224,55 +224,55 @@ Displays hint and lives left to the user
    * `hint` — word hidden with dashes
    * `lives` — how many lives have left
 
-## `static void displayNotInWord(String notInWord)`
+# `static void displayNotInWord(String notInWord)`
 
 Displays notInWord message
 
  * **Parameters:** `notInWord` — letters not in word
 
-## `static void displayWinMessage()`
+# `static void displayWinMessage()`
 
 Displays win message to the user
 
-## `static void displayLoseMessage()`
+# `static void displayLoseMessage()`
 
 Displays lose message to the user
 
-## `static void displayNotLetterMessage()`
+# `static void displayNotLetterMessage()`
 
 Displays message that input is not a letter
 
-## `static void displayLetterNotInWordMessage()`
+# `static void displayLetterNotInWordMessage()`
 
 Displays message that letter is not in word
 
-## `static void displayWrongWordMessage()`
+# `static void displayWrongWordMessage()`
 
 Displays message that guessed word is wrong
 
-## `static void displayWrongInput()`
+# `static void displayWrongInput()`
 
 Displays message about wrong input
 
-## `static void displayCountryName(String country)`
+# `static void displayCountryName(String country)`
 
 Displays given country name
 
  * **Parameters:** `country` — name of the country
 
-## `static void displayLetterAlreadyGuessed()`
+# `static void displayLetterAlreadyGuessed()`
 
 Displays message that user have already guessed that letter
 
-## `static void displayWordError()`
+# `static void displayWordError()`
 
 Displays message if user enters nothing instead of word
 
-## `static void displayLetterError()`
+# `static void displayLetterError()`
 
 Displays message if user enters nothing instead of a letter
 
-## `static void displayGuessingCountAndTime(int count, double time)`
+# `static void displayGuessingCountAndTime(int count, double time)`
 
 Displays message about guessing time and tries
 
@@ -280,19 +280,19 @@ Displays message about guessing time and tries
    * `count` — how many tries
    * `time` — how long the guessing took
 
-## `static void displayLeaderBoard(ArrayList<Score> scores)`
+# `static void displayLeaderBoard(ArrayList<Score> scores)`
 
 Displays leaderboard
 
  * **Parameters:** `scores` — list of score objects
 
-## `static void displayAsciiArt(int livesLeft)`
+# `static void displayAsciiArt(int livesLeft)`
 
 Displays appropriate ascii art for given lives left
 
  * **Parameters:** `livesLeft` — how many lives is left
 
-## `public static void displayLeaderBoardEmpty()`
+# `public static void displayLeaderBoardEmpty()`
 
 Displays message that leaderboard is empty
 
@@ -300,11 +300,11 @@ Displays message that leaderboard is empty
 
 Class containing list of Score objects
 
-## `LeaderBoard()`
+# `LeaderBoard()`
 
 Constructor of the class
 
-## `public void addScore(String name, Date date, double guessingTime, int guessingTries, String guessedWord)`
+# `public void addScore(String name, Date date, double guessingTime, int guessingTries, String guessedWord)`
 
 Adds score to the scores list
 
@@ -315,19 +315,19 @@ Adds score to the scores list
    * `guessingTries` — guessing tries
    * `guessedWord` — guessed word
 
-## `private void sortScores()`
+# `private void sortScores()`
 
 Sort scores by guessing time
 
-## `public void displayScores()`
+# `public void displayScores()`
 
 Display scores to the user
 
-## `private void serializeScores()`
+# `private void serializeScores()`
 
 Save whole list of scores to file (serialize it)
 
-## `@SuppressWarnings("unchecked") private void deserializeScores()`
+# `@SuppressWarnings("unchecked") private void deserializeScores()`
 
 Get whole list of scores from file
 
@@ -335,39 +335,39 @@ Get whole list of scores from file
 
 Class containing player statistics
 
-## `public Player()`
+# `public Player()`
 
 Constructor of the player
 
-## `public int getLifePoints()`
+# `public int getLifePoints()`
 
 Getter of the life points
 
  * **Returns:** life points left
 
-## `public int getGuessingCount()`
+# `public int getGuessingCount()`
 
 Getter of the guessing count
 
  * **Returns:** guessing count
 
-## `public double getGuessingTime()`
+# `public double getGuessingTime()`
 
 Getter of the guessing time
 
  * **Returns:** guessing time
 
-## `public void decrementLifePointsByValue(int value)`
+# `public void decrementLifePointsByValue(int value)`
 
 Decrements life points by given value
 
  * **Parameters:** `value` — how many points to subtract
 
-## `public void incrementGuessingCount()`
+# `public void incrementGuessingCount()`
 
 Increments guessing count by one
 
-## `public void calculateTime()`
+# `public void calculateTime()`
 
 Calculate time from creating a player to call this method
 
@@ -375,7 +375,7 @@ Calculate time from creating a player to call this method
 
 Represents single score
 
-## `Score(String name, Date date, double guessingTime, int guessingTries, String guessedWord)`
+# `Score(String name, Date date, double guessingTime, int guessingTries, String guessedWord)`
 
 Constructor of the score
 
@@ -386,31 +386,31 @@ Constructor of the score
    * `guessingTries` — guessing tries
    * `guessedWord` — guessed word
 
-## `public String getName()`
+# `public String getName()`
 
 Getter of the name
 
  * **Returns:** name of the player
 
-## `public Date getDate()`
+# `public Date getDate()`
 
 Getter of the date
 
  * **Returns:** guessing date
 
-## `public double getGuessingTime()`
+# `public double getGuessingTime()`
 
 Getter of the guessing time
 
  * **Returns:** guessing time
 
-## `public int getGuessingTries()`
+# `public int getGuessingTries()`
 
 Getter of the guessing tries
 
  * **Returns:** guessing tries
 
-## `public String getGuessedWord()`
+# `public String getGuessedWord()`
 
 Getter of the guessed word
 
