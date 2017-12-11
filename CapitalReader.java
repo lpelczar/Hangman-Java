@@ -1,8 +1,15 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * Class for reading capitals from file and creating Capital objects from them
+ */
 class CapitalReader {
 
+    /**
+     * Returns random Capital object from list of capitals
+     * @return random Capital
+     */
     public static Capital getRandomCapital() {
 
         ArrayList<Capital> capitals = getCapitalsFromFile();
@@ -11,6 +18,10 @@ class CapitalReader {
         return capitals.get(randomIndex);
     }
 
+    /**
+     * Read file with capitals and create a list containing all Capital objects
+     * @return list of capital objects
+     */
     private static ArrayList<Capital> getCapitalsFromFile() {
 
         String txtFile = "countries_and_capitals.txt";
