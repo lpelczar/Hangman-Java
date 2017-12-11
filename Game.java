@@ -1,11 +1,17 @@
 import java.util.*;
 
+/**
+ * Controls the game loop
+ */
 class Game {
 
     private Capital capital;
     private Player player;
     private LeaderBoard leaderboard;
 
+    /**
+     * Constructor of the game
+     */
     public Game() {
 
         this.capital = CapitalReader.getRandomCapital();
@@ -13,6 +19,9 @@ class Game {
         this.leaderboard = new LeaderBoard();
     }
 
+    /**
+     * Starts the game loop and controls the game until the game is not over
+     */
     public void start() {
 
         final String WORD = "w";
@@ -52,6 +61,9 @@ class Game {
         }
     }
 
+    /**
+     * Show all information for the user needed to play, eg. hints, lives, ascii art
+     */
     private void showGameHints() {
         clearConsole();
         GameView.displayHintAndLives(capital.getHint(), player.getLifePoints());
@@ -61,6 +73,10 @@ class Game {
         GameView.displayAsciiArt(player.getLifePoints());
     }
 
+    /**
+     * Gets option from the user
+     * @return user option "l" or "w" representing letter of word
+     */
     private String getOption() {
 
         final String[] CORRECT_OPTIONS = {"l", "w"};
@@ -77,6 +93,10 @@ class Game {
         return userInput;
     }
 
+    /**
+     * Checking if guessed letter is correct and update word, if not display appropriate message
+     * @return true if all letters are guessed and the game is over else false
+     */
     private boolean checkGuessedLetter() {
 
         final int LETTER_GUESSING_DECREMENT = 1;
@@ -99,6 +119,10 @@ class Game {
         return gameIsOver;
     }
 
+    /**
+     * Gets guessed letter from the user and check if it is actually a letter
+     * @return letter
+     */
     private char getGuessedLetter() {
 
         boolean correctInput = false;
@@ -123,6 +147,10 @@ class Game {
         return letter;
     }
 
+    /**
+     * Checking if word given by user are correct
+     * @return true if word is correct and false if not
+     */
     private boolean checkGuessedWord() {
 
         final int WORD_GUESSING_DECREMENT = 2;
@@ -151,6 +179,10 @@ class Game {
         return gameIsOver;
     }
 
+    /**
+     * Asks user if he wants to play again
+     * @return true if not and false if yes
+     */
     private boolean askToPlayAgain() {
 
         boolean gameIsOver;
@@ -176,6 +208,9 @@ class Game {
         return gameIsOver;
     }
 
+    /**
+     * Clears the console
+     */
     private static void clearConsole() {
         System.out.print("\033[H\033[2J");
         System.out.flush();

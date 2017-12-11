@@ -1,3 +1,6 @@
+/**
+ * Class containing Ansi codes for coloring text in console
+ */
 public class Colors {
 
     static final String ANSI_RESET = "\u001B[0m";
