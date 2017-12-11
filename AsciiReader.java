@@ -1,7 +1,16 @@
 import java.io.*;
 
+/**
+ * Reads txt file and returns string containing lines from startline to endline.
+ */
 class AsciiReader {
 
+    /**
+     * Read file with Ascii arts and return Ascii art from startline to endline as a String.
+     * @param startLine start line of ascii art in a file
+     * @param endLine end line of ascii art in a file
+     * @return Ascii art
+     */
     public static String readAscii(int startLine, int endLine) {
 
         String line;
