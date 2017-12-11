@@ -175,7 +175,7 @@ public class GameView {
      */
     static void displayLeaderBoard(ArrayList<Score> scores) {
 
-        final int MAX_HIGHSCORES_QUANTITY = 10
+        final int MAX_HIGHSCORES_QUANTITY = 10;
         List<Score> shortenScores;
 
         if (scores.size() > MAX_HIGHSCORES_QUANTITY) {
