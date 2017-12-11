@@ -68,7 +68,7 @@ class Capital {
      * @return notIsWord as a String
      */
     public String getNotInWordAsString() {
-        return "Not in word: " + String.join(" ", this.notInWord);
+        return String.join(" ", this.notInWord);
     }
 
     /**

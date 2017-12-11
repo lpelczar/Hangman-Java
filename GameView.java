@@ -75,11 +75,11 @@ public class GameView {
     }
 
     /**
-     * Displays message
-     * @param string message
+     * Displays notInWord message
+     * @param notInWord letters not in word
      */
-    static void display(String string) {
-        System.out.println(string);
+    static void displayNotInWord(String notInWord) {
+        System.out.println("Not in word: " + notInWord);
     }
 
     /**

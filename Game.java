@@ -68,7 +68,7 @@ class Game {
         clearConsole();
         GameView.displayHintAndLives(capital.getHint(), player.getLifePoints());
         if (capital.getNotInWord().size() > 0) {
-            GameView.display(capital.getNotInWordAsString());
+            GameView.displayNotInWord(capital.getNotInWordAsString());
         }
         GameView.displayAsciiArt(player.getLifePoints());
     }
