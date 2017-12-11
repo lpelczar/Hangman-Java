@@ -26,6 +26,7 @@ class Game {
 
         final String WORD = "w";
         final String LETTER = "l";
+        final int LAST_LIFE = 1;
         boolean gameIsOver = false;
         double timeInSeconds;
         String userOption = "";
@@ -33,7 +34,7 @@ class Game {
         while (!gameIsOver) {
 
             showGameHints();
-            if (player.getLifePoints() == 1) {GameView.displayCountryName(capital.getCountry());}
+            if (player.getLifePoints() == LAST_LIFE) {GameView.displayCountryName(capital.getCountry());}
 
             userOption = getOption();
             if (userOption.toLowerCase().equals(WORD)) {

@@ -174,10 +174,12 @@ public class GameView {
      * @param scores list of score objects
      */
     static void displayLeaderBoard(ArrayList<Score> scores) {
+
+        final int MAX_HIGHSCORES_QUANTITY = 10
         List<Score> shortenScores;
 
-        if (scores.size() > 10) {
-            shortenScores = scores.subList(0, 10);
+        if (scores.size() > MAX_HIGHSCORES_QUANTITY) {
+            shortenScores = scores.subList(0, MAX_HIGHSCORES_QUANTITY);
         } else {
             shortenScores = scores;
         }
