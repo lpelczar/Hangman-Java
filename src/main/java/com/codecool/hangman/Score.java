@@ -1,3 +1,6 @@
+package com.codecool.hangman;
+
+
 import java.util.Date;
 import java.io.Serializable;
 
@@ -7,11 +10,11 @@ import java.io.Serializable;
 class Score implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private String name;
-    private Date date;
-    private double guessingTime;
-    private int guessingTries;
-    private String guessedWord;
+    private final String name;
+    private final Date date;
+    private final double guessingTime;
+    private final int guessingTries;
+    private final String guessedWord;
 
 	/**
 	 * Constructor of the score

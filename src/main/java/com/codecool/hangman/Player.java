@@ -1,3 +1,5 @@
+package com.codecool.hangman;
+
 /**
  * Class containing player statistics
  */
@@ -5,7 +7,7 @@ class Player {
 
     private int lifePoints;
     private int guessingCount;
-    private long startTime;
+    private final long startTime;
     private double guessingTime;
 
     /**

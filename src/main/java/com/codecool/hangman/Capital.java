@@ -1,20 +1,22 @@
-import java.io.*;
-import java.util.*;
+package com.codecool.hangman;
+
+import java.util.ArrayList;
 
 /**
  * Represents Capital word to guess
  */
 class Capital {
 
-    private String name;
-    private String country;
+    private final String name;
+    private final String country;
     private String[] hiddenWord;
-    private ArrayList<String> notInWord = new ArrayList<String>();
-    private ArrayList<String> alreadyGuessed = new ArrayList<String>();
+    private final ArrayList<String> notInWord = new ArrayList<>();
+    private final ArrayList<String> alreadyGuessed = new ArrayList<>();
 
     /**
      * Constructor of the Capital
-     * @param name name of the capital
+     *
+     * @param name    name of the capital
      * @param country country of the capital
      */
     public Capital(String name, String country) {
@@ -25,6 +27,7 @@ class Capital {
 
     /**
      * Getter of name
+     *
      * @return name of the capital
      */
     public String getName() {
@@ -33,6 +36,7 @@ class Capital {
 
     /**
      * Getter of the country
+     *
      * @return name of the country
      */
     public String getCountry() {
@@ -41,6 +45,7 @@ class Capital {
 
     /**
      * Getter of the hidden word
+     *
      * @return word respresented with dashes as a String array
      */
     public String[] getHiddenWord() {
@@ -49,6 +54,7 @@ class Capital {
 
     /**
      * Getter of notInWord hint
+     *
      * @return hint with guessed letters which are not in guessing word
      */
     public ArrayList<String> getNotInWord() {
@@ -57,6 +63,7 @@ class Capital {
 
     /**
      * Getter of alreadyGuessed letters
+     *
      * @return already guessed letters
      */
     public ArrayList<String> getAlreadyGuessed() {
@@ -65,6 +72,7 @@ class Capital {
 
     /**
      * Get notInWord as a String
+     *
      * @return notIsWord as a String
      */
     public String getNotInWordAsString() {
@@ -73,6 +81,7 @@ class Capital {
 
     /**
      * Get hidden word as a String
+     *
      * @return hidden word as a String
      */
     public String getHiddenWordAsString() {
@@ -81,6 +90,7 @@ class Capital {
 
     /**
      * Get hint from hiddenWord
+     *
      * @return hiddenWord as a String
      */
     public String getHint() {
@@ -89,6 +99,7 @@ class Capital {
 
     /**
      * Chceck if word is equal capital name
+     *
      * @param word entered word by the user
      * @return true if is equal else false
      */
@@ -105,6 +116,7 @@ class Capital {
 
     /**
      * Adds letter to notInWord array
+     *
      * @param letter letter given by user
      */
     public void addLetterToNotInWord(String letter) {
@@ -113,6 +125,7 @@ class Capital {
 
     /**
      * Adds letter to alreadyGuessed array
+     *
      * @param letter letter given by the user
      */
     public void addLetterToAlreadyGuessed(String letter) {
@@ -121,6 +134,7 @@ class Capital {
 
     /**
      * Unhide given letter in hiddenWord
+     *
      * @param letter letter given by the user
      */
     public void unhideLetter(char letter) {

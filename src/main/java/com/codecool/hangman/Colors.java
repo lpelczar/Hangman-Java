@@ -1,3 +1,5 @@
+package com.codecool.hangman;
+
 /**
  * Class containing Ansi codes for coloring text in console
  */

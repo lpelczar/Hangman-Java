@@ -1,3 +1,5 @@
+package com.codecool.hangman;
+
 import java.util.*;
 import java.io.*;
 import java.lang.ClassNotFoundException;
@@ -7,7 +9,7 @@ import java.lang.ClassNotFoundException;
  */
 class LeaderBoard {
 
-    private ArrayList<Score> scores = new ArrayList<Score>();
+    private ArrayList<Score> scores = new ArrayList<>();
 
     /**
      * Constructor of the class
@@ -57,8 +59,6 @@ class LeaderBoard {
 			oos.writeObject(this.scores);
 			oos.close();
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -77,15 +77,11 @@ class LeaderBoard {
 			this.scores = (ArrayList<Score>) ois.readObject();
 			ois.close();
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (EOFException e) {
             GameView.displayLeaderBoardEmpty();
-        } catch (IOException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -1,3 +1,5 @@
+package com.codecool.hangman;
+
 import java.util.*;
 import java.text.SimpleDateFormat;
 import java.text.DecimalFormat;
@@ -15,8 +17,7 @@ public class GameView {
         System.out.print("Do you want to guess a " + Colors.ANSI_GREEN + "l" + Colors.ANSI_RESET +
                          "etter or whole " + Colors.ANSI_RED + "w" + Colors.ANSI_RESET + "ord: ");
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        return userInput;
+        return scanner.nextLine();
     }
 
     /**
@@ -26,8 +27,7 @@ public class GameView {
     static String getGuessedWord() {
         System.out.print("Enter word: ");
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        return userInput;
+        return scanner.nextLine();
     }
 
     /**
@@ -37,8 +37,7 @@ public class GameView {
     static String getUserName() {
         System.out.print("Enter your name to add your score to leaderboard: ");
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        return userInput;
+        return scanner.nextLine();
     }
 
     /**
@@ -48,8 +47,7 @@ public class GameView {
     static String getGuessedLetterInput() {
         System.out.print("Enter a letter: ");
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        return userInput;
+        return scanner.nextLine();
     }
 
     /**
@@ -59,8 +57,7 @@ public class GameView {
     static String getPlayAgainInput() {
         System.out.print("Do you want to play again? (y or n) ");
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        return userInput;
+        return scanner.nextLine();
     }
 
     /**
