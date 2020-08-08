@@ -17,7 +17,7 @@
 
 ## Sample screenshots
 
-![c1](http://i68.tinypic.com/2s84mjb.png)
+![c1](https://raw.github.com/lpelczar/Hangman-Java/master/hangman.png)
 
 ## More info
 
