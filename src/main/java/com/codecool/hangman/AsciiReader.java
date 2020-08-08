@@ -19,7 +19,7 @@ class AsciiReader {
         BufferedReader br = null;
         int currentLineNo = 1;
         String txtFile = "ascii_hangman.txt";
-        String ascii = "";
+        StringBuilder ascii = new StringBuilder();
 
         try {
 
@@ -29,7 +29,7 @@ class AsciiReader {
 
                 line = br.readLine();
                 if (currentLineNo >= startLine && currentLineNo<=endLine) {
-                    ascii += line +"\n";
+                    ascii.append(line).append("\n");
                 }
                 currentLineNo++;
             }
@@ -47,6 +47,6 @@ class AsciiReader {
                 }
             }
         }
-    return ascii;
+    return ascii.toString();
     }
 }

@@ -9,7 +9,7 @@ class Game {
 
     private Capital capital;
     private Player player;
-    private LeaderBoard leaderboard;
+    private final LeaderBoard leaderboard;
 
     /**
      * Constructor of the game
