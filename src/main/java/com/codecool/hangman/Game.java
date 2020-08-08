@@ -1,3 +1,5 @@
+package com.codecool.hangman;
+
 import java.util.*;
 
 /**

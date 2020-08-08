@@ -1,3 +1,5 @@
+package com.codecool.hangman;
+
 /**
  * Class containing player statistics
  */

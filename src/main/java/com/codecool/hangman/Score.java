@@ -1,3 +1,6 @@
+package com.codecool.hangman;
+
+
 import java.util.Date;
 import java.io.Serializable;
 

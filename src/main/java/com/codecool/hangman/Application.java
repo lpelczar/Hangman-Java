@@ -1,3 +1,5 @@
+package com.codecool.hangman;
+
 /**
  * Top class which starts the Application.
  */
